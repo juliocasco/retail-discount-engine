@@ -47,3 +47,51 @@ for (let product of products) {
     let certainCustomerDiscount = getcustomerDiscount(customerType);
 
     //Step 5 // 
+
+    let customers = [
+        { id: 1, type: "Student", cart: ["Rays Jersey ", "Bucs Cap "] },
+        { id: 2, type: "Senior", cart: ["Yankees Jersey ", "Argentina Hoodie "] },
+        { id: 3, type: "Regular", cart: ["Callaway HeadCover "] }
+    ];
+
+    for (let customer of customers) {
+        console.log(`Customer ID: ${customer.id}, Type: ${customer.type}`);
+
+        let Subtotal = 0;
+        for (let itemName of customer.cart) {
+           if (product = products.find(p => p.name === itemName)) {
+            if (prduct && product.Inventory > 0) {
+                Subtotal += product.discountedPrice;
+                product.Inventory -= 1; // Reduce inventory by 1 for each purchased item
+            } else {
+                console.log(`Sorry, ${itemName} is out of stock.`);
+            }
+           }
+        }
+
+        let additionalDiscount = getcustomerDiscount(customer.type);
+        let extraamount = Subtotal * additionalDiscount;
+        let finalTotal = Subtotal - extraamount;
+
+        console.log(`Subtotal: $${Subtotal.toFixed(2)}`);
+        console.log(`Additional Discount: $${extraamount.toFixed(2)}`);
+        console.log(`Final Total: $${finalTotal.toFixed(2)}`);
+        console.log("-");
+    }
+}
+
+// Step 6 //
+
+let exampleProduct = products[0];
+for let key in exampleProduct) {
+    console.log(`${key}: ${exampleProduct[key]}`);
+}   
+
+//Step 7 //
+
+for (let product of products) {
+    console.log(`Product: ${product.name}, Inventory: ${product.Inventory}`);
+    for (let key in product) {
+        console.log(`  ${key}: ${product[key]}`);
+    }       
+}
