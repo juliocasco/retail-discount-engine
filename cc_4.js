@@ -80,14 +80,14 @@ for (let product of products) {
     }
 }
 
-// Step 6 //
+// Step 6 I used For to log eacg key//
 
 let exampleProduct = products[0];
 for let key in exampleProduct) {
     console.log(`${key}: ${exampleProduct[key]}`);
 }   
 
-//Step 7 //
+//Step 7 Used object entries//
 
 for (let product of products) {
     console.log(`Product: ${product.name}, Inventory: ${product.Inventory}`);
