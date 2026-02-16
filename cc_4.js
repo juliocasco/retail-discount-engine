@@ -31,3 +31,19 @@ for (let product of products) {
     product.discountedPrice = product.price * (1 - discount);
 
     // Step 4 - Additional customer Type //
+
+    let customerType = "Student"; 
+
+    function getcustomerDiscount(customerType) {
+        if (customerType === "Student") {
+            return 0.05; // Additional 5% discount for students
+        } else if (customerType === "Senior") {
+            return 0.10; // Additional 10% discount for seniors
+        } else {
+            return 0; // No additional discount for regular customers
+        }   
+    }
+
+    let certainCustomerDiscount = getcustomerDiscount(customerType);
+
+    //Step 5 // 
